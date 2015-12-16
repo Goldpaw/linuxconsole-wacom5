@@ -43,6 +43,9 @@
 #include <sys/ioctl.h>
 #include <termios.h>
 #include <unistd.h>
+#ifdef SYSTEMD_SUPPORT
+#include <systemd/sd-daemon.h>
+#endif
 
 static int readchar(int fd, unsigned char *c, int timeout)
 {
@@ -1006,6 +1009,10 @@ int main(int argc, char **argv)
 		perror("inputattach");
 		retval = EXIT_FAILURE;
 	}
+
+#ifdef SYSTEMD_SUPPORT
+	sd_notifyf(0, "READY=1\nSTATUS=Processing...\nMAINPID=%lu", (unsigned long) getpid());
+#endif
 
 	errno = 0;
 	do {

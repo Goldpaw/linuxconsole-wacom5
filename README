@@ -45,6 +45,8 @@ derivatives).
 
 To install the utilities and their manpages, run
 	make
+or
+    make SYSTEMD_SUPPORT=1
 and then as root
 	make install
 from the distribution's top directory. This will install everything
@@ -118,6 +120,54 @@ identifiers used above ("FUJ02e5" or "WACf00c", the latter being
 matched by "WACf") no longer contains the matching identifier. The
 appropriate X.org driver when using inputattach in this way is evdev.
 
+An udev rule, especially shipped in a custom OS package is not
+always applicable because it cannot handle the conflict presented
+by the fact that not all computers are built the same and on one
+computer, e.g ttyS1 can be attached to a specific touchscreen,
+in another computer it can be attached to a different kind of
+touchscreen or a different device or connected at all.
+For this case, a wrapper script started from SysV, or nowadays,
+SystemD is more applicable. SystemD needs special treatment inside
+inputattach, a notification must be sent to it when inputattach
+becomes "ready". To achieve this, the previously mentioned
+"make SYSTEMD_SUPPORT=1" must be used to include this support.
+Then a systemd unit file and the wrapper script must be added,
+like below:
+
+----8<---- inputattach-wrapper.sh ----8<----
+#!/bin/sh
+
+SYSTEM=`detect_computer_type`
+case $SYSTEM in
+type1)
+    inputattach --daemon -pm9k /dev/ttyS2
+    ;;
+type2)
+    inputattach --daemon -mtouch /dev/ttyS2
+    ;;
+# and so on
+*)
+    # do nothing for other computers
+    ;;
+esac
+
+# Exit without errors, so systemd won't try to
+# restart our script for the "do nothing" case.
+exit 0
+----8<- end of inputattach-wrapper.sh-8<----
+
+----8<---- inputattach.service    ----8<----
+[Unit]
+Description=inputattach helper service
+
+[Service]
+Type=forking
+NotifyAccess=all
+ExecStart=/usr/sbin/inputattach-wrapper.sh
+
+[Install]
+WantedBy=multi-user.target
+----8<- end of inputattach.service----8<----
 
 Configuring PS3 controller LEDs
 -------------------------------

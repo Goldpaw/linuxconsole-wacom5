@@ -38,6 +38,13 @@ distclean: clean
 clean:
 	$(RM) *.o *.swp $(PROGRAMS) *.orig *.rej map *~
 
+ifeq ($(SYSTEMD_SUPPORT),1)
+SYSTEMDFLAGS = -DSYSTEMD_SUPPORT=1 $(shell pkg-config --cflags --libs libsystemd)
+endif
+
+inputattach: inputattach.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) -funsigned-char $^ $(LDFLAGS) $(SYSTEMDFLAGS) -lm -o $@
+
 ffcfstress: ffcfstress.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) -funsigned-char $^ $(LDFLAGS) -lm -o $@
 
