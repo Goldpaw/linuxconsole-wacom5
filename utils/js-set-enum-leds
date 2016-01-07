@@ -23,8 +23,6 @@
 # even before the gamepad is connected.  In these cases please match what
 # bluez will do (or may already have done if it is already running.)
 
-. /lib/udev/hotplug.functions
-
 # If the set_gamepad_leds function provided for convenience is to be used
 # for a particular type of gamepad, the udev rule should provide the following
 # postional parameters.  See /lib/udev/rules.d/60-joystick for examples.
@@ -42,7 +40,7 @@ set_gamepad_leds() {
 			echo $1 > $led/brightness
 			shift 1
 	        else
-			mesg "set_gamepad_leds: wrong number of leds or values"
+			echo "set_gamepad_leds: wrong number of leds or values" 1>&2
 			exit -1
 		fi
 	done
@@ -72,5 +70,5 @@ case $ID_MODEL in
 			;;
 		esac
 		;;
-	*) mesg "called with no matching model"
+	*) echo "called with no matching model" 1>&2
 esac
