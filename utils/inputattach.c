@@ -625,6 +625,8 @@ static int wacom_iv_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
+#ifdef SERIO_EGALAX
+
 static int check_egalax_response(int fd, unsigned char *command, int sz, unsigned char *response) {
 	int pos = 0;
 	int error = 0;
@@ -696,6 +698,8 @@ static int egalax_init(int fd, unsigned long *id, unsigned long *extra) {
 
 	return 0;
 }
+
+# endif /* SERIO_EGALAX */
 
 struct input_types {
 	const char *name;
