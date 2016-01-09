@@ -27,6 +27,6 @@ PREFIX          ?= /usr/local
 
 install:
 	install -d $(DESTDIR)$(PREFIX)/share/man/man1
-	install $(MANPAGES) $(DESTDIR)$(PREFIX)/share/man/man1
+	install -m644 $(MANPAGES) $(DESTDIR)$(PREFIX)/share/man/man1
 
 .PHONY: install

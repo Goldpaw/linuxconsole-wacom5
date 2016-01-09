@@ -1,4 +1,4 @@
-.TH inputattach 1 "August 9, 2011" inputattach
+.TH inputattach 1 "January 9, 2016" inputattach
 .SH NAME
 inputattach \- attach a serial line to an input-layer device
 .SH SYNOPSIS
@@ -28,7 +28,13 @@ rate is incorrect.)
 .SS Modes
 .TP
 .BR \-dump ", " \-\-dump
-Just enable device .
+Just enable device.
+.TP
+.BR \-eeti ", " \-\-eetiegalax
+EETI eGalaxTouch.
+.TP
+.BR \-ep ", " \-\-easypen
+Genius EasyPen 3x4 tablet.
 .TP
 .BR \-elo3b ", " \-\-elo261-280
 ELO Touchscreen, 3-byte mode.
@@ -48,6 +54,9 @@ Fujitsu serial touchscreen.
 .BR \-ipaq ", " \-\-h3600ts
 Ipaq h3600 touchscreen.
 .TP
+.BR \-ham ", " \-\-hampshire
+Hampshire touchscreen.
+.TP
 .BR \-ifor ", " \-\-iforce
 I-Force joystick or wheel.
 .TP
@@ -66,6 +75,9 @@ Magellan / SpaceMouse.
 .BR \-mmw ", " \-\-mmwheel
 Logitech mouse with 4-5 buttons or a wheel.
 .TP
+.BR \-mman4 ", " \-\-mouseman4
+4-button Logitech / Genius mouse.
+.TP
 .BR \-mman ", " \-\-mouseman
 3-button Logitech / Genius mouse.
 .TP
@@ -82,16 +94,19 @@ MicroTouch (3M) touchscreen.
 Newton keyboard.
 .TP
 .BR \-pm3k ", " \-\-penmount3000
-Penmount 3000 touchscreen.
+PenMount 3000 touchscreen.
 .TP
 .BR \-pm6k ", " \-\-penmount6000
-Penmount 6000 touchscreen.
+PenMount 6000 touchscreen.
 .TP
 .BR \-pmm1 ", " \-\-penmount6250
-Penmount 6250 touchscreen.
+PenMount 6250 touchscreen.
 .TP
 .BR \-pm9k ", " \-\-penmount9000
-Penmount 9000 touchscreen.
+PenMount 9000 touchscreen.
+.TP
+.BR \-ps2m ", " \-\-ps2mult
+PS/2 serial multiplexer.
 .TP
 .BR \-ps2ser ", " \-\-ps2serkbd
 PS/2 via serial keyboard.
@@ -117,9 +132,6 @@ Sun Type 4 and Type 5 keyboards.
 .BR \-taos ", " \-\-taos\-evm
 TAOS evaluation module.
 .TP
-.BR \-tsc ", " \-\-tsc
-TSC-10/25/40 touch screen.
-.TP
 .BR \-t213 ", " \-\-touchit213
 Sahara Touch-iT213 Tablet PC.
 .TP
@@ -128,6 +140,9 @@ Touchright serial touchscreen.
 .TP
 .BR \-tw ", " \-\-touchwin
 Touchwindow serial touchscreen.
+.TP
+.BR \-tsc ", " \-\-tsc
+TSC-10/25/40 serial touchscreen.
 .TP
 .BR \-twidjoy ", " \-\-twiddler-joy
 Handykey Twiddler used as a joystick.
@@ -144,7 +159,7 @@ allows for touch-only or pen and touch devices; for pen-only devices,
 "\fB\-\-baud 19200\fP" must be specified.
 .TP
 .BR \-wacom_iv ", " \-\-wacom_iv
-Wacom protocol IV tablets.
+Wacom protocol IV tablet.
 .TP
 .BR \-war ", " \-\-warrior
 WingMan Warrior.

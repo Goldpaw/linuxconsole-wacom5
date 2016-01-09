@@ -1,3 +1,17 @@
+Version 1.4.9
+-------------
+
+* inputattach supports a new mouseman4 mode for 4-button Logitech mice
+  (thanks to Jamie Lentin <jm@lentin.co.uk>).
+
+* inputattach supports EETI eGalaxTouch touchscreens (thanks to
+  Böszörményi Zoltán <zboszor@pr.hu>).
+
+* inputattach can provide a "ready" notification to systemd (thanks to
+  Böszörményi Zoltán <zboszor@pr.hu>).
+
+* js-set-enum-leds no longer uses hotplug.functions.
+
 Version 1.4.8
 -------------
 

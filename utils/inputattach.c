@@ -858,7 +858,7 @@ static struct input_types input_types[] = {
 { "--w8001",		"-w8001",	"Wacom W8001",
 	B38400, CS8,
 	SERIO_W8001,		0x00,	0x00,	0,	NULL },
-{ "--wacom_iv",		"-wacom_iv",	"Wacom protocol 4 tablet",
+{ "--wacom_iv",		"-wacom_iv",	"Wacom protocol IV tablet",
 	B9600, CS8 | CRTSCTS,
 	SERIO_WACOM_IV,		0x00,	0x00,	0,	wacom_iv_init },
 { NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, NULL }

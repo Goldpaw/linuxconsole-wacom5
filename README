@@ -1,5 +1,5 @@
 			  linuxconsole tools
-			    Release 1.4.8
+			    Release 1.4.9
 		 http://sf.net/projects/linuxconsole/
 
 
@@ -46,7 +46,7 @@ derivatives).
 To install the utilities and their manpages, run
 	make
 or
-    make SYSTEMD_SUPPORT=1
+	make SYSTEMD_SUPPORT=1
 and then as root
 	make install
 from the distribution's top directory. This will install everything
@@ -120,19 +120,19 @@ identifiers used above ("FUJ02e5" or "WACf00c", the latter being
 matched by "WACf") no longer contains the matching identifier. The
 appropriate X.org driver when using inputattach in this way is evdev.
 
-An udev rule, especially shipped in a custom OS package is not
+A udev rule, especially shipped in a custom OS package is not
 always applicable because it cannot handle the conflict presented
 by the fact that not all computers are built the same and on one
 computer, e.g ttyS1 can be attached to a specific touchscreen,
 in another computer it can be attached to a different kind of
 touchscreen or a different device or connected at all.
-For this case, a wrapper script started from SysV, or nowadays,
-SystemD is more applicable. SystemD needs special treatment inside
-inputattach, a notification must be sent to it when inputattach
+For this case, a wrapper script started from sysvinit, upstart, or
+systemd is better suited. systemd needs special treatment inside
+inputattach: a notification must be sent to it when inputattach
 becomes "ready". To achieve this, the previously mentioned
 "make SYSTEMD_SUPPORT=1" must be used to include this support.
-Then a systemd unit file and the wrapper script must be added,
-like below:
+Then a systemd unit file and the wrapper script can be added, similar
+to the following:
 
 ----8<---- inputattach-wrapper.sh ----8<----
 #!/bin/sh
@@ -213,6 +213,9 @@ The following people have contributed to this release:
 * Andrew Basterfield: fix for Spaceball 4000FLX support.
 * bri: PS3 controller LED configuration
 * Julian Squires: Wacom IV support.
+* Jamie Lentin: mouseman4 mode.
+* Böszörményi Zoltán: eGalaxTouch support, Hampshire support, systemd
+  notification.
 
 
 License
@@ -223,7 +226,7 @@ The linuxconsole tools are
 	Copyright © 2001 Oliver Hamann
 	Copyright © 2001-2002 Johann Deneux
 	Copyright © 2001 Arndt Schoenewald
-	Copyright © 2008-2015 Stephen Kitt
+	Copyright © 2008-2016 Stephen Kitt
 
 
 This program is free software; you can redistribute it and/or modify
