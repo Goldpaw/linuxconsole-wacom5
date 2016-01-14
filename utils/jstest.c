@@ -55,13 +55,34 @@ char *axis_names[ABS_MAX + 1] = {
 "?", "?", "?", "?", "?", "?", "?", 
 };
 
+/* These must match the constants in include/uapi/linux/input.h */
 char *button_names[KEY_MAX - BTN_MISC + 1] = {
-"Btn0", "Btn1", "Btn2", "Btn3", "Btn4", "Btn5", "Btn6", "Btn7", "Btn8", "Btn9", "?", "?", "?", "?", "?", "?",
-"LeftBtn", "RightBtn", "MiddleBtn", "SideBtn", "ExtraBtn", "ForwardBtn", "BackBtn", "TaskBtn", "?", "?", "?", "?", "?", "?", "?", "?",
-"Trigger", "ThumbBtn", "ThumbBtn2", "TopBtn", "TopBtn2", "PinkieBtn", "BaseBtn", "BaseBtn2", "BaseBtn3", "BaseBtn4", "BaseBtn5", "BaseBtn6", "?", "?", "?", "BtnDead",
-"BtnA", "BtnB", "BtnC", "BtnX", "BtnY", "BtnZ", "BtnTL", "BtnTR", "BtnTL2", "BtnTR2", "BtnSelect", "BtnStart", "BtnMode", "BtnThumbL", "BtnThumbR", "?",
-"?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", 
-"WheelBtn", "Gear up",
+  /* BTN_0, 0x100, to BTN_9, 0x109 */
+  "Btn0", "Btn1", "Btn2", "Btn3", "Btn4", "Btn5", "Btn6", "Btn7", "Btn8", "Btn9",
+  /* 0x10a to 0x10f */
+  "?", "?", "?", "?", "?", "?",
+  /* BTN_LEFT, 0x110, to BTN_TASK, 0x117 */
+  "LeftBtn", "RightBtn", "MiddleBtn", "SideBtn", "ExtraBtn", "ForwardBtn", "BackBtn", "TaskBtn",
+  /* 0x118 to 0x11f */
+  "?", "?", "?", "?", "?", "?", "?", "?",
+  /* BTN_TRIGGER, 0x120, to BTN_PINKIE, 0x125 */
+  "Trigger", "ThumbBtn", "ThumbBtn2", "TopBtn", "TopBtn2", "PinkieBtn",
+  /* BTN_BASE, 0x126, to BASE6, 0x12b */
+  "BaseBtn", "BaseBtn2", "BaseBtn3", "BaseBtn4", "BaseBtn5", "BaseBtn6",
+  /* 0x12c to 0x12e */
+  "?", "?", "?",
+  /* BTN_DEAD, 0x12f */
+  "BtnDead",
+  /* BTN_A, 0x130, to BTN_TR2, 0x139 */
+  "BtnA", "BtnB", "BtnC", "BtnX", "BtnY", "BtnZ", "BtnTL", "BtnTR", "BtnTL2", "BtnTR2",
+  /* BTN_SELECT, 0x13a, to BTN_THUMBR, 0x13e */
+  "BtnSelect", "BtnStart", "BtnMode", "BtnThumbL", "BtnThumbR",
+  /* 0x13f */
+  "?",
+  /* Skip the BTN_DIGI range, 0x140 to 0x14f */
+  "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?", "?",
+  /* BTN_WHEEL / BTN_GEAR_DOWN, 0x150, to BTN_GEAR_UP, 0x151 */
+  "WheelBtn", "Gear up",
 };
 
 #define NAME_LENGTH 128
