@@ -21,6 +21,8 @@
  * 02110-1301 USA.
  */
 
+#define _DEFAULT_SOURCE
+
 #include <linux/input.h>
 #include <sys/ioctl.h>
 #include <stdio.h>

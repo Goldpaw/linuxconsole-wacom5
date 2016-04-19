@@ -31,6 +31,8 @@
  * 02110-1301 USA.
  */
 
+#define _DEFAULT_SOURCE
+
 #include <sys/ioctl.h>
 #include <sys/time.h>
 #include <sys/types.h>

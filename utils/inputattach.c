@@ -32,6 +32,8 @@
  * 02110-1301 USA.
  */
 
+#define _DEFAULT_SOURCE
+
 #include <ctype.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -41,6 +43,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/ioctl.h>
+#include <sys/select.h>
 #include <termios.h>
 #include <unistd.h>
 #ifdef SYSTEMD_SUPPORT
