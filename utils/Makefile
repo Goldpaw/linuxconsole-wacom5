@@ -84,7 +84,7 @@ install: compile 80-stelladaptor-joystick.rules
 	install $(PROGRAMS) $(DESTDIR)$(PREFIX)/bin
 	install -d $(DESTDIR)$(PREFIX)/share/joystick
 	install extract filter ident $(DESTDIR)$(PREFIX)/share/joystick
-	install -d $(DESTDIR)/lib/udev
+	install -d $(DESTDIR)/lib/udev/rules.d
 	install js-set-enum-leds $(DESTDIR)/lib/udev
 	install 80-stelladaptor-joystick.rules $(DESTDIR)/lib/udev/rules.d
 
