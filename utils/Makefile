@@ -4,7 +4,7 @@
 # Makefile for Linux input utilities
 #
 # © 1998-2000 Vojtech Pavlik (sponsored by SuSE)
-# © 2008-2012 Stephen Kitt <steve@sk2.org>
+# © 2008-2016 Stephen Kitt <steve@sk2.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@
 CFLAGS		?= -g -O2 -Wall
 
 PROGRAMS	= inputattach jstest jscal fftest ffmvforce ffset \
-		  ffcfstress jscal-restore jscal-store
+		  ffcfstress jscal-restore jscal-store evdev-joystick
 
 PREFIX          ?= /usr/local
 
@@ -36,11 +36,13 @@ compile: $(PROGRAMS)
 
 distclean: clean
 clean:
-	$(RM) *.o *.swp $(PROGRAMS) *.orig *.rej map *~
+	$(RM) *.o *.swp $(PROGRAMS) *.orig *.rej map *~ *.rules
 
 ifeq ($(SYSTEMD_SUPPORT),1)
 SYSTEMDFLAGS = -DSYSTEMD_SUPPORT=1 $(shell pkg-config --cflags --libs libsystemd)
 endif
+
+evdev-joystick: evdev-joystick.c
 
 inputattach: inputattach.c
 	$(CC) $(CFLAGS) $(CPPFLAGS) -funsigned-char $^ $(LDFLAGS) $(SYSTEMDFLAGS) -lm -o $@
@@ -74,12 +76,16 @@ jscal-restore: jscal-restore.in
 jscal-store: jscal-store.in
 	sed "s^@@PREFIX@@^$(PREFIX)^g" < $^ > $@
 
-install: compile
+80-stelladaptor-joystick.rules: 80-stelladaptor-joystick.rules.in
+	sed "s^@@PREFIX@@^$(PREFIX)^g" < $^ > $@
+
+install: compile 80-stelladaptor-joystick.rules
 	install -d $(DESTDIR)$(PREFIX)/bin
 	install $(PROGRAMS) $(DESTDIR)$(PREFIX)/bin
 	install -d $(DESTDIR)$(PREFIX)/share/joystick
 	install extract filter ident $(DESTDIR)$(PREFIX)/share/joystick
 	install -d $(DESTDIR)/lib/udev
 	install js-set-enum-leds $(DESTDIR)/lib/udev
+	install 80-stelladaptor-joystick.rules $(DESTDIR)/lib/udev/rules.d
 
 .PHONY: compile clean distclean install

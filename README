@@ -17,6 +17,8 @@ Joystick utilities
 ------------------
 
 The following utilities are provided to calibrate and test joysticks:
+* evdev-joystick - calibrate joystick devices (including dead zones
+  and fuzz)
 * ffcfstress, ffmvforce, fftest - test force-feedback devices
 * ffset - set force-feedback device parameters
 * jscal - calibrate joystick devices, reconfigure the axes and buttons
@@ -216,6 +218,7 @@ The following people have contributed to this release:
 * Jamie Lentin: mouseman4 mode.
 * Böszörményi Zoltán: eGalaxTouch support, Hampshire support, systemd
   notification.
+* Stephen Anthony: evdev-joystick (based on G25manage).
 
 
 License
@@ -227,6 +230,7 @@ The linuxconsole tools are
 	Copyright © 2001-2002 Johann Deneux
 	Copyright © 2001 Arndt Schoenewald
 	Copyright © 2008-2016 Stephen Kitt
+	Copyright © 2016 Stephen Anthony
 
 
 This program is free software; you can redistribute it and/or modify
