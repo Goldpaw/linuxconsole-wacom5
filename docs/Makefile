@@ -2,7 +2,7 @@
 #
 # Makefile for Linux input utilities
 #
-# © 2011 Stephen Kitt <steve@sk2.org>
+# © 2011, 2016 Stephen Kitt <steve@sk2.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 
 MANPAGES	= inputattach.1 jstest.1 jscal.1 fftest.1 \
 		  ffmvforce.1 ffset.1 ffcfstress.1 jscal-store.1 \
-		  jscal-restore.1
+		  jscal-restore.1 evdev-joystick.1
 
 PREFIX          ?= /usr/local
 
