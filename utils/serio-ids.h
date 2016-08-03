@@ -131,5 +131,8 @@
 #ifndef SERIO_EASYPEN
 # define SERIO_EASYPEN		0x3f
 #endif
+#ifndef SERIO_PULSE8_CEC
+# define SERIO_PULSE8_CEC	0x40
+#endif
 
 #endif
