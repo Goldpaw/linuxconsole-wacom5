@@ -11,6 +11,10 @@ evdev\-joystick \- joystick calibration program
 .B evdev\-joystick \-\-evdev \fR\fIdevice\(hypath\fP>
 .RB [ \-\-axis
 .RI < axis >]
+.RB [ \-\-minimum
+.RI < value >]
+.RB [ \-\-maximum
+.RI < value >]
 .RB [ \-\-deadzone
 .RI < value >]
 .RB [ \-\-fuzz
@@ -37,6 +41,12 @@ Specify the joystick \fIdevice\fP to modify.
 .BR \-\-a ", " \-\-axis " <" \fIaxis\fP >
 Specify the \fIaxis\fP to modify (by default, all axes are
 calibrated).
+.TP
+.BR \-\-m ", " \-\-minimum " <" \fIvalue\fP >
+Change the minimum for the current joystick.
+.TP
+.BR \-\-M ", " \-\-maximum " <" \fIvalue\fP >
+Change the maximum for the current joystick.
 .TP
 .BR \-\-d ", " \-\-deadzone " <" \fIvalue\fP >
 Change the deadzone for the current joystick.

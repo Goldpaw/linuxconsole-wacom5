@@ -44,9 +44,9 @@ Long Explanation (For the curious, or if something doesn't work, etc.)
       'evdev-joystick --s <NAME_OF_DEVICE>'
     Again, for me, this will output the following:
 
-  Absolute axis 0x00 (0) (X Axis) (min: 0, max: 4095, flatness: 128 (=0.00%), fuzz: 15)
-  Absolute axis 0x01 (1) (Y Axis) (min: 0, max: 4095, flatness: 128 (=0.00%), fuzz: 15)
-  Absolute axis 0x02 (2) (Z Axis) (min: 0, max: 15, flatness: 0 (=0.00%), fuzz: 0)
+  Absolute axis 0x00 (0) (X Axis) (value: 132, min: 0, max: 4095, flatness: 128 (=0.00%), fuzz: 15)
+  Absolute axis 0x01 (1) (Y Axis) (value: 127, min: 0, max: 4095, flatness: 128 (=0.00%), fuzz: 15)
+  Absolute axis 0x02 (2) (Z Axis) (value: 0, min: 0, max: 15, flatness: 0 (=0.00%), fuzz: 0)
 
 6)  Notice that the flatness/deadzone for axes 0 & 1 is 128.
 
@@ -55,9 +55,9 @@ Long Explanation (For the curious, or if something doesn't work, etc.)
 8)  Now check the current deadzone again by typing:
       'evdev-joystick --s <NAME_OF_DEVICE>'
 
-  Absolute axis 0x00 (0) (X Axis) (min: 0, max: 4095, flatness: 0 (=0.00%), fuzz: 15)
-  Absolute axis 0x01 (1) (Y Axis) (min: 0, max: 4095, flatness: 0 (=0.00%), fuzz: 15)
-  Absolute axis 0x02 (2) (Z Axis) (min: 0, max: 15, flatness: 0 (=0.00%), fuzz: 0)
+  Absolute axis 0x00 (0) (X Axis) (value: 132, min: 0, max: 4095, flatness: 0 (=0.00%), fuzz: 15)
+  Absolute axis 0x01 (1) (Y Axis) (value: 127, min: 0, max: 4095, flatness: 0 (=0.00%), fuzz: 15)
+  Absolute axis 0x02 (2) (Z Axis) (value: 0, min: 0, max: 15, flatness: 0 (=0.00%), fuzz: 0)
 
 9)  Note that the 'flatness' has changed to 0?  If so, then the program is
     working as intended.
