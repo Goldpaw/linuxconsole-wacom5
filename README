@@ -219,6 +219,8 @@ The following people have contributed to this release:
 * Böszörményi Zoltán: eGalaxTouch support, Hampshire support, systemd
   notification.
 * Stephen Anthony: evdev-joystick (based on G25manage).
+* Hans Verkuil: Pulse-Eight HDMI CEC dongle support.
+* Jon Sangster: min/max axis control in evdev-joystick.
 
 
 License

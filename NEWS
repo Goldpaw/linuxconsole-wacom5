@@ -1,3 +1,17 @@
+Version 1.6.0
+-------------
+
+* inputattach supports the Pulse-Eight HDMI CEC dongle (this requires
+  kernel 4.8 or later; thanks to Hans Verkuil <hverkuil@xs4all.nl>).
+
+* evdev-joystick can set the minimum and maximum axis values (thanks
+  to Jon Sangster <jon@ertt.ca>).
+
+* The udev rules are installed without executable permissions.
+
+* The evdev-joystick manpage is installed along with the other
+  manpages.
+
 Version 1.5.1
 -------------
 
