@@ -867,6 +867,9 @@ static struct input_types input_types[] = {
 { "--pulse8-cec",		"-pulse8-cec",	"Pulse Eight HDMI CEC dongle",
 	B9600, CS8,
 	SERIO_PULSE8_CEC,		0x00,	0x00,	0,	NULL },
+{ "--rainshadow-cec",		"-rainshadow-cec",	"RainShadow Tech HDMI CEC dongle",
+	B9600, CS8,
+	SERIO_RAINSHADOW_CEC,		0x00,	0x00,	0,	NULL },
 { NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, NULL }
 };
 

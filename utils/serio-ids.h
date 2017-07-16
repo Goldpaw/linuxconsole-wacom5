@@ -134,5 +134,8 @@
 #ifndef SERIO_PULSE8_CEC
 # define SERIO_PULSE8_CEC	0x40
 #endif
+#ifndef SERIO_RAINSHADOW_CEC
+# define SERIO_RAINSHADOW_CEC	0x41
+#endif
 
 #endif
