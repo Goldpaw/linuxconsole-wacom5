@@ -907,7 +907,7 @@ static struct input_types input_types[] = {
 { "--wacom_iv",		"-wacom_iv",	"Wacom protocol IV tablet",
 	B9600, CS8 | CRTSCTS,
 	SERIO_WACOM_IV,		0x00,	0x00,	0,	wacom_iv_init },
-{ "--wacom_v",		"-wacom_v",	"Wacom protocol V tablet",
+{ "--wacom_v",		"-wacom_v",	"Wacom protocol 5 tablet",
 	B9600, CS8,
 	SERIO_WACOM_V,		0x00,	0x00,	0,	wacom_v_init },
 { "--pulse8-cec",		"-pulse8-cec",	"Pulse Eight HDMI CEC dongle",
