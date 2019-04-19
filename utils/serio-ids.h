@@ -126,7 +126,10 @@
 # define SERIO_PS2MULT		0x3c
 #endif
 #ifndef SERIO_WACOM_IV
-# define SERIO_WACOM_IV		0x3e
+# define SERIO_WACOM_IV		0x3d
+#endif
+#ifndef SERIO_WACOM_V
+# define SERIO_WACOM_V		0x3e
 #endif
 #ifndef SERIO_EASYPEN
 # define SERIO_EASYPEN		0x3f

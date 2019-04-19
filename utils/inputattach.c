@@ -658,6 +658,17 @@ static int wacom_iv_init(int fd,
 	return 0;
 }
 
+static int wacom_v_init(int fd, unsigned long *id, unsigned long *extra)
+{
+	if (write(fd, "BA19\r", 5) != 5)
+				return -1;
+
+	usleep(100 * 1000);
+
+	setline(fd, CS8, B19200);
+	return 0;
+}
+
 #ifdef SERIO_EGALAX
 
 static int check_egalax_response(int fd, unsigned char *command, int sz, unsigned char *response) {
@@ -896,6 +907,9 @@ static struct input_types input_types[] = {
 { "--wacom_iv",		"-wacom_iv",	"Wacom protocol IV tablet",
 	B9600, CS8 | CRTSCTS,
 	SERIO_WACOM_IV,		0x00,	0x00,	0,	wacom_iv_init },
+{ "--wacom_v",		"-wacom_v",	"Wacom protocol V tablet",
+	B9600, CS8,
+	SERIO_WACOM_V,		0x00,	0x00,	0,	wacom_v_init },
 { "--pulse8-cec",		"-pulse8-cec",	"Pulse Eight HDMI CEC dongle",
 	B9600, CS8,
 	SERIO_PULSE8_CEC,		0x00,	0x00,	0,	NULL },
