@@ -87,7 +87,7 @@ void parse_args(int argc, char * argv[])
 		} else if (!strcmp(argv[i],"-x")) {
 		        if (i<argc-1) { 
 			        axis_index = atoi(argv[++i]); 
-				if (axis_index < 0 || axis_index >= sizeof(axis_names)/sizeof(char*))
+				if (axis_index < 0 || axis_index >= (int) (sizeof(axis_names) / sizeof(char*)))
 				    help = 1;
 				else
 				    axis_code = axis_codes[axis_index];

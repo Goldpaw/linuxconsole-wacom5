@@ -123,7 +123,7 @@ int main(int argc, char** argv)
 	if (testBit(ABS_MISC, absFeatures)) printf("Misc ,");
 
 	printf("\n    [");
-	for (i=0; i<sizeof(absFeatures)/sizeof(unsigned char);i++)
+	for (i = 0; i < (int) (sizeof(absFeatures) / sizeof(unsigned char)); i++)
 	    printf("%02X ", absFeatures[i]);
 	printf("]\n");
 
@@ -148,7 +148,7 @@ int main(int argc, char** argv)
 	if (testBit(REL_MISC, relFeatures)) printf("Misc, ");
 
 	printf("\n    [");
-	for (i=0; i<sizeof(relFeatures)/sizeof(unsigned char);i++)
+	for (i = 0; i < (int) (sizeof(relFeatures) / sizeof(unsigned char)); i++)
 	    printf("%02X ", relFeatures[i]);
 	printf("]\n");
 
@@ -182,7 +182,7 @@ int main(int argc, char** argv)
 	if (testBit(FF_CUSTOM, ffFeatures)) printf("Custom, ");
 
 	printf("\n    [");
-	for (i=0; i<sizeof(ffFeatures)/sizeof(unsigned char);i++)
+	for (i = 0; i < (int) (sizeof(ffFeatures) / sizeof(unsigned char)); i++)
 	    printf("%02X ", ffFeatures[i]);
 	printf("]\n");
 

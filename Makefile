@@ -2,7 +2,7 @@
 #
 # Makefile for Linux input utilities
 #
-# © 2011-2016 Stephen Kitt <steve@sk2.org>
+# © 2011-2019 Stephen Kitt <steve@sk2.org>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 # 02110-1301 USA.
 
-VERSION := 1.6.0
+VERSION := 1.6.1
 
 PACKAGE := linuxconsoletools-$(VERSION)
 

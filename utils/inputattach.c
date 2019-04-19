@@ -105,14 +105,18 @@ static int logitech_command(int fd, char *c)
 	return 0;
 }
 
-static int magellan_init(int fd, unsigned long *id, unsigned long *extra)
+static int magellan_init(int fd,
+			 __attribute__ ((unused)) unsigned long *id,
+			 __attribute__ ((unused)) unsigned long *extra)
 {
 	if (write(fd, "m3\rpBB\rz\r", 9) != 9)
 		return -1;
 	return 0;
 }
 
-static int warrior_init(int fd, unsigned long *id, unsigned long *extra)
+static int warrior_init(int fd,
+			__attribute__ ((unused)) unsigned long *id,
+			__attribute__ ((unused)) unsigned long *extra)
 {
 	if (logitech_command(fd, "*S"))
 		return -1;
@@ -175,7 +179,9 @@ static int spaceball_cmd(int fd, char *c, char *d)
 #define SPACEBALL_4000FLX	8
 #define SPACEBALL_4000FLX_L	9
 
-static int spaceball_init(int fd, unsigned long *id, unsigned long *extra)
+static int spaceball_init(int fd,
+			  unsigned long *id,
+			  __attribute__ ((unused)) unsigned long *extra)
 {
 	char r[64];
 
@@ -239,7 +245,9 @@ static int spaceball_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
-static int stinger_init(int fd, unsigned long *id, unsigned long *extra)
+static int stinger_init(int fd,
+			__attribute__ ((unused)) unsigned long *id,
+			__attribute__ ((unused)) unsigned long *extra)
 {
 	int i;
 	unsigned char c;
@@ -255,7 +263,9 @@ static int stinger_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
-static int mzp_init(int fd, unsigned long *id, unsigned long *extra)
+static int mzp_init(int fd,
+		    __attribute__ ((unused)) unsigned long *id,
+		    __attribute__ ((unused)) unsigned long *extra)
 {
 	if (logitech_command(fd, "*X*q"))
 		return -1;
@@ -264,9 +274,11 @@ static int mzp_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
-static int newton_init(int fd, unsigned long *id, unsigned long *extra)
+static int newton_init(int fd,
+		       __attribute__ ((unused)) unsigned long *id,
+		       __attribute__ ((unused)) unsigned long *extra)
 {
-	int i;
+	unsigned int i;
 	unsigned char c;
 	unsigned char response[35] = {
 		0x16, 0x10, 0x02, 0x64, 0x5f, 0x69, 0x64, 0x00,
@@ -283,7 +295,9 @@ static int newton_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
-static int twiddler_init(int fd, unsigned long *id, unsigned long *extra)
+static int twiddler_init(int fd,
+			 __attribute__ ((unused)) unsigned long *id,
+			 __attribute__ ((unused)) unsigned long *extra)
 {
 	unsigned char c[10];
 	int count, line;
@@ -337,9 +351,11 @@ static int twiddler_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
-static int pm6k_init(int fd, unsigned long *id, unsigned long *extra)
+static int pm6k_init(int fd,
+		     __attribute__ ((unused)) unsigned long *id,
+		     __attribute__ ((unused)) unsigned long *extra)
 {
-	int i = 0;
+	unsigned int i = 0;
 	unsigned char cmd[6] = {0xF1, 0x00, 0x00, 0x00, 0x00, 0x0E};
 	unsigned char data[6] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
@@ -355,7 +371,9 @@ static int pm6k_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
-static int fujitsu_init(int fd, unsigned long *id, unsigned long *extra)
+static int fujitsu_init(int fd,
+			__attribute__ ((unused)) unsigned long *id,
+			__attribute__ ((unused)) unsigned long *extra)
 {
 	unsigned char cmd, data;
 
@@ -383,7 +401,9 @@ static int fujitsu_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
-static int tsc40_init(int fd, unsigned long *id, unsigned long *extra)
+static int tsc40_init(int fd,
+		      __attribute__ ((unused)) unsigned long *id,
+		      __attribute__ ((unused)) unsigned long *extra)
 {
 	unsigned char cmd[2], data;
 	unsigned int eeprom;
@@ -459,7 +479,9 @@ static int tsc40_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
-static int t213_init(int fd, unsigned long *id, unsigned long *extra)
+static int t213_init(int fd,
+		     __attribute__ ((unused)) unsigned long *id,
+		     __attribute__ ((unused)) unsigned long *extra)
 {
 	char cmd[]={0x0a,1,'A'};
 	int count=10;
@@ -505,7 +527,9 @@ static int t213_init(int fd, unsigned long *id, unsigned long *extra)
 	return -1;
 }
 
-static int zhenhua_init(int fd, unsigned long *id, unsigned long *extra)
+static int zhenhua_init(int fd,
+			__attribute__ ((unused)) unsigned long *id,
+			__attribute__ ((unused)) unsigned long *extra)
 {
 	/* Zhen Hua 5 byte protocol: first (synchronization) byte allways
 	 * contain 0xF7, next four bytes are axis of controller with values
@@ -548,7 +572,9 @@ static int zhenhua_init(int fd, unsigned long *id, unsigned long *extra)
 #define EP_UPPER_ORIGIN "b"     /* Origin upper left */
 #define EP_STREAM_MODE  "@"     /* Stream mode */
 
-static int easypen_init(int fd, unsigned long *id, unsigned long *extra)
+static int easypen_init(int fd,
+			__attribute__ ((unused)) unsigned long *id,
+			__attribute__ ((unused)) unsigned long *extra)
 {
 	char buf[256];
 
@@ -570,7 +596,9 @@ static int easypen_init(int fd, unsigned long *id, unsigned long *extra)
 	return 0;
 }
 
-static int dump_init(int fd, unsigned long *id, unsigned long *extra)
+static int dump_init(int fd,
+		     __attribute__ ((unused)) unsigned long *id,
+		     __attribute__ ((unused)) unsigned long *extra)
 {
 	unsigned char c, o = 0;
 
@@ -596,7 +624,9 @@ static int dump_init(int fd, unsigned long *id, unsigned long *extra)
 #define WACOM_IV_STOP "SP\r"
 enum { WACOM_IV_RESET_BAUD_LEN = 2, WACOM_IV_RESET_LEN = 2, WACOM_IV_STOP_LEN = 3 };
 
-static int wacom_iv_init(int fd, unsigned long *id, unsigned long *extra)
+static int wacom_iv_init(int fd,
+			 __attribute__ ((unused)) unsigned long *id,
+			 __attribute__ ((unused)) unsigned long *extra)
 {
 	setline(fd, CS8 | CRTSCTS, B38400);
 	if (write(fd, WACOM_IV_RESET_BAUD, WACOM_IV_RESET_BAUD_LEN) != WACOM_IV_RESET_BAUD_LEN)
@@ -668,7 +698,9 @@ static int check_egalax_response(int fd, unsigned char *command, int sz, unsigne
 	return -1;
 }
 
-static int egalax_init(int fd, unsigned long *id, unsigned long *extra) {
+static int egalax_init(int fd,
+		       __attribute__ ((unused)) unsigned long *id,
+		       __attribute__ ((unused)) unsigned long *extra) {
 	unsigned char packet_alive_query[3] = { 0x0a, 0x01, 'A' };
 	unsigned char packet_fw_ver[3] = { 0x0a, 0x01, 'D' };
 	unsigned char packet_ctrl_type[3] = { 0x0a, 0x01, 'E' };

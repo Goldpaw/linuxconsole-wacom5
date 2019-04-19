@@ -1,5 +1,5 @@
 			  linuxconsole tools
-			    Release 1.5.1
+			    Release 1.6.1
 		 http://sf.net/projects/linuxconsole/
 
 
@@ -219,7 +219,7 @@ The following people have contributed to this release:
 * Böszörményi Zoltán: eGalaxTouch support, Hampshire support, systemd
   notification.
 * Stephen Anthony: evdev-joystick (based on G25manage).
-* Hans Verkuil: Pulse-Eight HDMI CEC dongle support.
+* Hans Verkuil: Pulse-Eight and RainShadow HDMI CEC dongle support.
 * Jon Sangster: min/max axis control in evdev-joystick.
 
 
@@ -231,7 +231,7 @@ The linuxconsole tools are
 	Copyright © 2001 Oliver Hamann
 	Copyright © 2001-2002 Johann Deneux
 	Copyright © 2001 Arndt Schoenewald
-	Copyright © 2008-2016 Stephen Kitt
+	Copyright © 2008-2019 Stephen Kitt
 	Copyright © 2016 Stephen Anthony
 
 

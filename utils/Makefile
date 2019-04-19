@@ -25,7 +25,7 @@
 # Edit the options below to suit your needs
 #
 
-CFLAGS		?= -g -O2 -Wall
+CFLAGS		?= -g -O2 -Wall -Wextra
 
 PROGRAMS	= inputattach jstest jscal fftest ffmvforce ffset \
 		  ffcfstress jscal-restore jscal-store evdev-joystick

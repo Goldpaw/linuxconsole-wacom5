@@ -1,3 +1,12 @@
+Version 1.6.1
+-------------
+
+* inputattach supports the RainShadow HDMI CEC dongle (this requires
+  kernel 4.12 or later; thanks to Hans Verkuil).
+
+* The jscal store and restore tools use udevadm on the path, instead
+  of hard-coding /sbin.
+
 Version 1.6.0
 -------------
 
